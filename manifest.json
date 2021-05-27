@@ -1,0 +1,16 @@
+{
+    "name": "MobileStore Extension by Jacek Winiarczyk",
+    "version": "1.0",
+    "description": "Calculates average sales as a percentage value of orders.",
+
+    "manifest_version": 2,
+    "author": "Jacek Winiarczyk",
+    "background": {
+        "persistent": true,
+        "scripts": ["js/background.js"]
+      },
+      "permissions": [
+        "contextMenus",
+        "activeTab"
+      ]
+  }
