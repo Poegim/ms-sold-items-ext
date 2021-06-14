@@ -1,51 +1,48 @@
-if (typeof text !== 'undefined') {
+var soldPercentage = 0;
+var soldItems = 0;
+var purchasedItems = 0;
+var soldPercentageAll = 0;
+var soldItemsAll = 0;
+var purchasedItemsAll = 0;
+var percentageAddingResult = 0;
+var itemsCalculationResult = 0;
 
-    let text = document.getElementsByClassName('table-progress-text');
-    for (item of text) {
-                var x = item.innerText.split(' ')[0];
-                item.innerText = x;
-    }
-    
-    let all = 0;
 
-    text = document.getElementsByClassName('table-progress-text');
-    
-    for (items of text) 
-    {
-        all = all + parseFloat(items.innerText);
-    }
-    
-    let mid = all / text.length;
-    
-    if (!isNaN(mid)) 
-    {
-        alert(mid.toFixed(2));
-    }
+var text = document.getElementsByClassName('table-progress-text');
 
-} else
-{
-    text = document.getElementsByClassName('table-progress-text');
-    for (item of text) {
-                var x = item.innerText.split(' ')[0];
-                item.innerText = x;
-    }
-    
-    all = 0;
+//Adding percentages to percentages.
+for (item of text) {
+            
+    soldPercentage = parseFloat(item.innerText.split(' ')[0]);
+    soldPercentageAll += soldPercentage;
 
-    text = document.getElementsByClassName('table-progress-text');
-    
-    for (items of text) 
-    {
-        all = all + parseFloat(items.innerText);
-    }
-    
-    mid = all / text.length;
-    
-    if (!isNaN(mid)) 
-    {
-        alert(mid.toFixed(2));
-    }
 }
+percentageAddingResult = (soldPercentageAll/text.length);
+console.log("Old formula, adding percentages: " + percentageAddingResult + "%");
+//End of percentage adding.
+
+
+//Items calculations.
+
+text = document.getElementsByClassName('table-progress-text');
+for (item of text) {
+    soldItems = item.innerText.split('(')[1];
+    soldItems = parseFloat(soldItems.split('/')[0]);
+    soldItemsAll += soldItems;
+
+
+    purchasedItems = item.innerText.split('(')[1];
+    purchasedItems = purchasedItems.split('/')[1];
+    purchasedItems = purchasedItems.split(')')[0];
+    purchasedItemsAll += parseFloat(purchasedItems);
+
+}
+
+itemsCalculationResult = (soldItemsAll/purchasedItemsAll);
+itemsCalculationResult = ((itemsCalculationResult*100).toFixed(2));
+
+alert("Kupiono: "+purchasedItemsAll+", sprzedano: " + soldItemsAll+ ". Procent sprzedanych przedmiotow: " + itemsCalculationResult + "%" );
+
 
 
 
