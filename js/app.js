@@ -2,7 +2,6 @@ var soldItems = 0;
 var purchasedItems = 0;
 var soldItemsAll = 0;
 var purchasedItemsAll = 0;
-var percentageAddingResult = 0;
 var itemsCalculationResult = 0;
 
 text = document.getElementsByClassName('table-progress-text');
