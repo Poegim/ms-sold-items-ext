@@ -4,7 +4,7 @@ var soldItemsAll = 0;
 var purchasedItemsAll = 0;
 var itemsCalculationResult = 0;
 
-text = document.getElementsByClassName('table-progress-text');
+var text = document.getElementsByClassName('table-progress-text');
 
 for (item of text) {
     soldItems = item.innerText.split('(')[1];
