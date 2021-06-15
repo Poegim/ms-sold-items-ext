@@ -11,7 +11,6 @@ for (item of text) {
     soldItems = parseFloat(soldItems.split('/')[0]);
     soldItemsAll += soldItems;
 
-
     purchasedItems = item.innerText.split('(')[1];
     purchasedItems = purchasedItems.split('/')[1];
     purchasedItems = purchasedItems.split(')')[0];
@@ -19,10 +18,10 @@ for (item of text) {
 
 }
 
-itemsCalculationResult = (soldItemsAll/purchasedItemsAll);
+itemsCalculationResult = soldItemsAll/purchasedItemsAll;
 itemsCalculationResult = ((itemsCalculationResult*100).toFixed(2));
 
-alert("Kupiono: "+purchasedItemsAll+", sprzedano: " + soldItemsAll+ ". Procent sprzedanych przedmiotow: " + itemsCalculationResult + "%" );
+alert("Kupiono: " + purchasedItemsAll + ", sprzedano: " + soldItemsAll + ". Procent sprzedanych przedmiotow: " + itemsCalculationResult + "%" );
 
 
 
