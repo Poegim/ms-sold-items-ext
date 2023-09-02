@@ -4,7 +4,7 @@
     "description": "Calculates average sales as a percentage value of orders.",
 
     "manifest_version": 2,
-    "author": "Jacek Winiarczyk",
+    "author": "github-poegim",
     "background": {
         "persistent": true,
         "scripts": ["js/background.js"]
